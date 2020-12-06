@@ -1,5 +1,5 @@
 const path = require("path");
-export default {
+module.exports = {
   // pathPrefix: "",
   siteMetadata: {
     title: `Damjan Radev`,

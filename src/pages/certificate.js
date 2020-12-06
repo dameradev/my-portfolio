@@ -17,7 +17,7 @@ const CertificateStyles = styled.div`
 
 const certificate = ({ location: { state } }) => {
   let img = null;
-  switch (state.certificate) {
+  switch (state?.certificate) {
     case "advanced-react":
       img = advancedReact;
       break;
