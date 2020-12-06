@@ -1,0 +1,124 @@
+import React from "react";
+
+import { Link } from "gatsby-plugin-modal-routing";
+
+import AboutBlock from "../components/AboutBlock";
+import PortfolioItem from "../components/Portfolio/Item";
+import SEO from "../components/SEO";
+
+import { HeroStyles, SectionStyles } from "../styles/HomePage";
+import { data } from "../utils/data";
+
+const HomePage = () => {
+  const frontendData = data.about.frontend;
+  const backendData = data.about.backend;
+  const portfolioData = data.portfolio;
+
+  return (
+    <>
+      <SEO />
+
+      <HeroStyles>
+        <div className="text">
+          <h2 className="subtitle">DAMJAN RADEV.</h2>
+          <h1 className="title">Full Stack Developer</h1>
+          <h3 className="caption">
+            Highly experienced developer in creating blazing fast SEO friendly
+            websites with custom backend/cms
+          </h3>
+          <button>See my work</button>
+        </div>
+      </HeroStyles>
+
+      <SectionStyles className="about">
+        <h1> ABOUT </h1>
+
+        <div className="about__blocks">
+          <AboutBlock data={frontendData} />
+
+          <AboutBlock data={backendData} />
+        </div>
+      </SectionStyles>
+      <SectionStyles className="portfolio">
+        <h1>My work</h1>
+        <ul className="portfolio__list">
+          <PortfolioItem data={portfolioData.roarBikes} />
+          <PortfolioItem data={portfolioData.pep} />
+          <PortfolioItem data={portfolioData.queens} />
+          <PortfolioItem data={portfolioData.aladinko} />
+        </ul>
+      </SectionStyles>
+
+      <SectionStyles className="testamonials">
+        <h1>Testamonials</h1>
+        <div className="testamonial">
+          <div>
+            <div className="img"></div>
+            <p>Josh S:</p>
+          </div>
+          <p>
+            "We are VERY happy with the work Dame has completed! He has worked
+            for us for the last year on a very big project. We have given him
+            100s of difficult tasks and they were all completely successfully.
+            Dame will take the time to research and find the best route to
+            complete a task. He is very smart, reliable and always available. We
+            are very sad to see him go. He will always remain in our hearts.
+            Thank you Dame for everything!"
+          </p>
+        </div>
+      </SectionStyles>
+      <SectionStyles className="certificates">
+        <h1>Certificates</h1>
+        <ul>
+          <li>
+            <Link
+              to="/certificate"
+              asModal
+              state={{ modal: true, certificate: "css" }}
+            >
+              Css-The Complete Guide(Flexbox, grid&Sass)
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/certificate"
+              asModal
+              state={{ modal: true, certificate: "node-js" }}
+            >
+              NodeJs-The Complete Guide(incl. MVC, REST APIs, GraphQL)
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/certificate"
+              asModal
+              state={{ modal: true, certificate: "master-gatsby" }}
+            >
+              Master Gatsby Advanced Course
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/certificate"
+              asModal
+              state={{ modal: true, certificate: "advanced-react" }}
+            >
+              Advanced React and GraphQL and Prisma
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/certificate"
+              asModal
+              state={{ modal: true, certificate: "react" }}
+            >
+              Modern React and Redux
+            </Link>
+          </li>
+        </ul>
+      </SectionStyles>
+    </>
+  );
+};
+
+export default HomePage;
