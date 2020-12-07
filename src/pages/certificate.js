@@ -39,7 +39,7 @@ const certificate = ({ location: { state } }) => {
   return (
     <ConditionalLayout>
       <CertificateStyles>
-        <Image src={`${state.certificate}.png`} />
+        <Image src={`${state?.certificate}.png`} />
       </CertificateStyles>
     </ConditionalLayout>
   );
