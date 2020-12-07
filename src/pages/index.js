@@ -31,7 +31,7 @@ const HomePage = () => {
         </div>
       </HeroStyles>
 
-      <SectionStyles className="about">
+      <SectionStyles id="about" className="about">
         <h1> ABOUT </h1>
 
         <div className="about__blocks">
@@ -40,7 +40,7 @@ const HomePage = () => {
           <AboutBlock data={backendData} />
         </div>
       </SectionStyles>
-      <SectionStyles className="portfolio">
+      <SectionStyles id="portfolio" className="portfolio">
         <h1>My work</h1>
         <ul className="portfolio__list">
           <PortfolioItem data={portfolioData.roarBikes} />

@@ -35,10 +35,10 @@ export default function Nav() {
       <Logo />
       <ul>
         <li>
-          <Link to="/">About</Link>
+          <Link to="/#about">About</Link>
         </li>
         <li>
-          <Link to="/">My work</Link>
+          <Link to="/#portfolio">My work</Link>
         </li>
         {/* <li>
           <Link to="/slicemasters">Contact</Link>

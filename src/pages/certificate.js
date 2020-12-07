@@ -7,6 +7,8 @@ import react from "../assets/images/react.webp";
 import css from "../assets/images/css.webp";
 import styled from "styled-components";
 
+import Image from "../components/Image";
+
 const CertificateStyles = styled.div`
   img {
     height: 50%;
@@ -37,7 +39,7 @@ const certificate = ({ location: { state } }) => {
   return (
     <ConditionalLayout>
       <CertificateStyles>
-        <img src={img} />
+        <Image src={`${state.certificate}.png`} />
       </CertificateStyles>
     </ConditionalLayout>
   );
