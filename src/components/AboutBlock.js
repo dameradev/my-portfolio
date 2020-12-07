@@ -54,7 +54,7 @@ const AboutBlockStyles = styled.div`
   }
   p,
   li {
-    font-weight: 100;
+    font-weight: 200;
     font-size: 1.6rem;
   }
 

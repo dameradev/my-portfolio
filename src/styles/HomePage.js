@@ -160,18 +160,70 @@ export const SectionStyles = styled.section`
       display: flex;
       align-items: center;
       justify-content: center;
-      margin: 0 auto;
-      width: 60%;
+      /* margin: 0 auto; */
+      /* width: 60%; */
       gap: 5rem;
-      div {
-        width: 10rem;
+      background: #f7f7f7;
+      width: 100%;
+      height: 40rem;
+      border-bottom: 1rem solid var(--primary);
+      padding: 0 10%;
+
+      ${respondTo.tabletMini`
+        flex-direction:column;
+        gap: 0;
+        height: 75vh;
+        padding: 0 2rem;
+      `}
+
+      .image-wrapper {
+        p {
+          text-transform: uppercase;
+          font-size: 2.4rem;
+          font-weight: 200;
+        }
       }
       .img {
-        width: 8rem;
-        height: 8rem;
+        width: 15rem;
+        height: 15rem;
         border-radius: 50%;
-
         background: #3a3a3a;
+      }
+
+      &__content {
+        font-weight: 200;
+        padding: 0 5%;
+        position: relative;
+
+        &::before {
+          content: '"';
+          position: absolute;
+          /* top: 10rem; */
+          top: -4rem;
+          left: 0;
+          font-size: 8rem;
+          font-style: italic;
+          font-family: sans;
+          color: var(--secondary);
+          /* left: 25rem; */
+          ${respondTo.tabletMini`
+            display: none
+          `}
+        }
+        &::after {
+          content: '"';
+          position: absolute;
+          /* top: 10rem; */
+          bottom: -8rem;
+          right: 2rem;
+          font-size: 8rem;
+          font-style: italic;
+          font-family: sans;
+          color: var(--secondary);
+          ${respondTo.tabletMini`
+            display: none
+          `}
+        }
       }
     }
   }

@@ -53,18 +53,18 @@ const HomePage = () => {
       <SectionStyles className="testamonials">
         <h1>Testamonials</h1>
         <div className="testamonial">
-          <div>
+          <div className="image-wrapper">
             <Image src="testamonial-avatar.png" className="img" />
-            <p>Josh S:</p>
+            <p>Josh S</p>
           </div>
-          <p>
-            "We are VERY happy with the work Dame has completed! He has worked
+          <p className="testamonial__content">
+            We are VERY happy with the work Damjan has completed! He has worked
             for us for the last year on a very big project. We have given him
             100s of difficult tasks and they were all completely successfully.
-            Dame will take the time to research and find the best route to
+            Damjan will take the time to research and find the best route to
             complete a task. He is very smart, reliable and always available. We
             are very sad to see him go. He will always remain in our hearts.
-            Thank you Dame for everything!"
+            Thank you Damjan for everything!
           </p>
         </div>
       </SectionStyles>
