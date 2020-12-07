@@ -64,12 +64,19 @@ const HomePage = () => {
             Damjan will take the time to research and find the best route to
             complete a task. He is very smart, reliable and always available. He
             will always remain in our hearts. Thank you Damjan for everything!
-            <a
+            <Link
+              to="/image"
+              asModal
+              state={{ modal: true, image: "upwork-testamonial" }}
+            >
+              View Source
+            </Link>
+            {/* <a
               href="https://www.upwork.com/freelancers/~016698a4e83f22f634"
               target="_blank"
             >
               View Source
-            </a>
+            </a> */}
           </p>
         </div>
       </SectionStyles>
@@ -77,47 +84,35 @@ const HomePage = () => {
         <h1>Certificates</h1>
         <ul>
           <li>
-            <Link
-              to="/certificate"
-              asModal
-              state={{ modal: true, certificate: "css" }}
-            >
+            <Link to="/image" asModal state={{ modal: true, image: "css" }}>
               Css-The Complete Guide(Flexbox, grid&Sass)
             </Link>
           </li>
           <li>
-            <Link
-              to="/certificate"
-              asModal
-              state={{ modal: true, certificate: "node-js" }}
-            >
+            <Link to="/image" asModal state={{ modal: true, image: "node-js" }}>
               NodeJs-The Complete Guide(incl. MVC, REST APIs, GraphQL)
             </Link>
           </li>
           <li>
             <Link
-              to="/certificate"
+              to="/image"
               asModal
-              state={{ modal: true, certificate: "master-gatsby" }}
+              state={{ modal: true, image: "master-gatsby" }}
             >
               Master Gatsby Advanced Course
             </Link>
           </li>
           <li>
             <Link
-              to="/certificate"
+              to="/image"
               asModal
-              state={{ modal: true, certificate: "advanced-react" }}
+              state={{ modal: true, image: "advanced-react" }}
             >
               Advanced React and GraphQL and Prisma
             </Link>
           </li>
           <li>
-            <Link
-              to="/certificate"
-              asModal
-              state={{ modal: true, certificate: "react" }}
-            >
+            <Link to="/image" asModal state={{ modal: true, image: "react" }}>
               Modern React and Redux
             </Link>
           </li>

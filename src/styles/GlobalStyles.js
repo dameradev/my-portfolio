@@ -132,9 +132,9 @@ const GlobalStyles = createGlobalStyle`
     transition: transform 500ms ease-out;
     /* height: 80vh; */
     width: 60vw;
-
+    
     ${respondTo.laptop`
-      width: 80vw;
+      width: 70vw;
     `}
     overflow: scroll;
     height: min-content;

@@ -242,11 +242,14 @@ export const SectionStyles = styled.section`
     ul {
       display: flex;
       flex-direction: column;
-      gap: 3rem;
+
       li {
         font-weight: 100;
         /* transition: all 0.3s; */
         cursor: pointer;
+        &:not(:last-of-type) {
+          margin-bottom: 3rem;
+        }
         a {
           transition: all 0.3s;
           &:hover {
