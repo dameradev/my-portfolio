@@ -17,8 +17,12 @@ const NavStyles = styled.nav`
   ul {
     display: flex;
     list-style: none;
-    gap: 2rem;
     text-transform: uppercase;
+  }
+  li {
+    &:not(:last-of-type) {
+      margin-right: 2rem;
+    }
   }
   a {
     color: var(--white);

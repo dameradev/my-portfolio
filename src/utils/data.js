@@ -8,11 +8,11 @@ export const data = {
       description:
         "Responsive websites built using the latest technologies for optimal UX",
       languages: {
-        title: "Language i use",
+        title: "Languages",
         items: ["Html5", "Css3", "Scss/Sass", "Java Script"],
       },
       devTools: {
-        title: "Dev tools",
+        title: "Technologies",
         items: [
           "React JS (React Hooks)",
           "Material Ui",
@@ -28,7 +28,7 @@ export const data = {
       description:
         "You will get an admin Ui with which you can control the content users see on your website",
       languages: {
-        title: "Dev Tools",
+        title: "Technologies",
         items: ["Node JS", "Java Script", "Prisma", "Graphql"],
       },
       devTools: {

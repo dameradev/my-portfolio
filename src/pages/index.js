@@ -5,6 +5,7 @@ import { Link } from "gatsby-plugin-modal-routing";
 import AboutBlock from "../components/AboutBlock";
 import PortfolioItem from "../components/Portfolio/Item";
 import SEO from "../components/SEO";
+import Image from "../components/Image";
 
 import { HeroStyles, SectionStyles } from "../styles/HomePage";
 import { data } from "../utils/data";
@@ -53,7 +54,7 @@ const HomePage = () => {
         <h1>Testamonials</h1>
         <div className="testamonial">
           <div>
-            <div className="img"></div>
+            <Image src="testamonial-avatar.png" className="img" />
             <p>Josh S:</p>
           </div>
           <p>

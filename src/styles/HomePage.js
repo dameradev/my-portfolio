@@ -27,6 +27,7 @@ export const HeroStyles = styled.div`
     display: flex;
     flex-direction: column;
     gap: 3rem;
+    font-weight: 100;
   }
   .subtitle {
     text-transform: uppercase;

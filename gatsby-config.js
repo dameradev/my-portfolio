@@ -16,8 +16,11 @@ module.exports = {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
         fonts: [
-          `Advent Pro`,
-          // `source sans pro\: 200,300,400,400i,700`, // you can also specify font weights and styles
+          `Josefin Sans`,
+          `Josefin Sans\:100`,
+          `Josefin Sans\:200`,
+          // `montserrat`, `montserrat\:700`, `montserrat\:900`, `open sans`
+          // `source Nunito\: 100, 200,300,400,400i,700`, // you can also specify font weights and styles
         ],
         display: "swap",
       },
