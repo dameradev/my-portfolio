@@ -194,6 +194,11 @@ export const SectionStyles = styled.section`
         font-weight: 200;
         padding: 0 5%;
         position: relative;
+        a {
+          padding-top: 1rem;
+          display: block;
+          color: var(--secondary);
+        }
 
         &::before {
           content: '"';

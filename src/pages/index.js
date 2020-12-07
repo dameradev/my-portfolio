@@ -62,9 +62,14 @@ const HomePage = () => {
             for us for the last year on a very big project. We have given him
             100s of difficult tasks and they were all completely successfully.
             Damjan will take the time to research and find the best route to
-            complete a task. He is very smart, reliable and always available. We
-            are very sad to see him go. He will always remain in our hearts.
-            Thank you Damjan for everything!
+            complete a task. He is very smart, reliable and always available. He
+            will always remain in our hearts. Thank you Damjan for everything!
+            <a
+              href="https://www.upwork.com/freelancers/~016698a4e83f22f634"
+              target="_blank"
+            >
+              View Source
+            </a>
           </p>
         </div>
       </SectionStyles>
