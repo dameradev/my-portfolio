@@ -28,7 +28,7 @@ const PortfolioItemStyles = styled.li`
   &:hover {
     background: var(--primary);
     .gatsby-image-wrapper {
-      opacity: 0.1;
+      display: none;
     }
     button {
       opacity: 1;
