@@ -56,7 +56,7 @@ const PortfolioItemStyles = styled.li`
     border: 1px solid var(--secondary);
     box-shadow: none;
     color: var(--secondary);
-    font-weight: 100;
+
     padding: 1rem 2rem;
     font-size: 1.6rem;
     align-self: center;

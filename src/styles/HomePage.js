@@ -87,6 +87,9 @@ export const HeroStyles = styled.div`
   }
 
   button {
+    a {
+      color: #fff;
+    }
     ${respondTo.tabletMini`
         align-self: center;
       `}

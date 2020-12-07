@@ -27,7 +27,9 @@ const HomePage = () => {
             Highly experienced developer in creating blazing fast SEO friendly
             websites with custom backend or cms
           </h3>
-          <button>See my work</button>
+          <button>
+            <Link to="/#portfolio">SEE my work</Link>
+          </button>
         </div>
       </HeroStyles>
 
