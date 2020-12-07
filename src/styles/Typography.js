@@ -19,7 +19,7 @@ const Typography = createGlobalStyle`
     src:  url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,600;1,300&display=swap');
   } */
   html {
-    font-family: 'Josefin Sans';
+    font-family: 'Advent Pro', sans-serif;
     /* font-family: Josefin Sans, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; */
     color: var(--black);
   }
@@ -29,6 +29,7 @@ const Typography = createGlobalStyle`
   h1,h2,h3,h4,h5,h6 {
     font-weight: normal;
     margin: 0;
+    letter-spacing: 0.2rem;
   }
   a {
     color: var(--black);
