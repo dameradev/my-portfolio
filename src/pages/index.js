@@ -25,7 +25,7 @@ const HomePage = () => {
           <h1 className="title">Full Stack Developer</h1>
           <h3 className="caption">
             Highly experienced developer in creating blazing fast SEO friendly
-            websites with custom backend/cms
+            websites with custom backend or cms
           </h3>
           <button>See my work</button>
         </div>

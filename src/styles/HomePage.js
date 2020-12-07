@@ -165,15 +165,15 @@ export const SectionStyles = styled.section`
       gap: 5rem;
       background: #f7f7f7;
       width: 100%;
-      height: 40rem;
+      height: fit-content;
       border-bottom: 1rem solid var(--primary);
-      padding: 0 10%;
+      padding: 10rem 10%;
 
       ${respondTo.tabletMini`
         flex-direction:column;
         gap: 0;
-        height: 75vh;
-        padding: 0 2rem;
+        
+        padding: 5rem 2rem;
       `}
 
       .image-wrapper {
