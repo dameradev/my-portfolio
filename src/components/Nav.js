@@ -38,11 +38,11 @@ export default function Nav() {
           <Link to="/">About</Link>
         </li>
         <li>
-          <Link to="/pizzas/">My work</Link>
+          <Link to="/">My work</Link>
         </li>
-        <li>
+        {/* <li>
           <Link to="/slicemasters">Contact</Link>
-        </li>
+        </li> */}
       </ul>
     </NavStyles>
   );

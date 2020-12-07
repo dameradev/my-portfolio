@@ -26,9 +26,13 @@ export const HeroStyles = styled.div`
     color: #fff;
     display: flex;
     flex-direction: column;
-    gap: 3rem;
+    /* gap: 3rem; */
     font-weight: 100;
+    & > * {
+      margin-bottom: 3rem;
+    }
   }
+
   .subtitle {
     text-transform: uppercase;
     font-size: 9rem;

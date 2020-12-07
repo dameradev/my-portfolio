@@ -74,7 +74,7 @@ const PortfolioItemStyles = styled.li`
     opacity: 0;
     display: flex;
     flex-wrap: wrap;
-    gap: 1rem;
+
     align-self: center;
     align-items: center;
     justify-content: center;
@@ -85,6 +85,7 @@ const PortfolioItemStyles = styled.li`
       padding: 0.5rem 1rem;
       font-size: 1.6rem;
       text-transform: uppercase;
+      margin: 0.5rem;
     }
   }
 `;
