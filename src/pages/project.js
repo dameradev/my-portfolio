@@ -102,48 +102,50 @@ const Project = (props) => {
 
   return (
     <>
-      <ProjectStyles>
-        <div className="header">
-          <h1>{project.title}</h1>
-          <div className="links">
-            <a href={project.website} target="_blank">
-              <img src={ViewWebsiteIcon} />
-              View website
-            </a>
-            <a href={project.github} target="_blank">
-              <img src={GithubIcon} />
-              Open in github
-            </a>
+      {project && (
+        <ProjectStyles>
+          <div className="header">
+            <h1>{project.title}</h1>
+            <div className="links">
+              <a href={project.website} target="_blank">
+                <img src={ViewWebsiteIcon} />
+                View website
+              </a>
+              <a href={project.github} target="_blank">
+                <img src={GithubIcon} />
+                Open in github
+              </a>
+            </div>
           </div>
-        </div>
 
-        <Slideshow className="slideshow" slideshowData={project.slideshow} />
-        <SectionStyles className="description">
-          <h1>Description</h1>
-          {project.description.map((item) => (
-            <p>{item}</p>
-          ))}
-        </SectionStyles>
-        <SectionStyles>
-          <h1>Technologies</h1>
-
-          <TechologiesStyles className="technologies">
-            {project.technologies.map((technology) => (
-              <li>{technology}</li>
+          <Slideshow className="slideshow" slideshowData={project.slideshow} />
+          <SectionStyles className="description">
+            <h1>Description</h1>
+            {project.description.map((item) => (
+              <p>{item}</p>
             ))}
-          </TechologiesStyles>
-        </SectionStyles>
+          </SectionStyles>
+          <SectionStyles>
+            <h1>Technologies</h1>
 
-        <SectionStyles className="testing">
-          <h1>Testing</h1>
-          <p>
-            This app was tested for Performance, SEO. Accessibility and Best
-            practices
-          </p>
-          <p>This is the result</p>
-          <Image src={project.testResult} />
-        </SectionStyles>
-      </ProjectStyles>
+            <TechologiesStyles className="technologies">
+              {project.technologies.map((technology) => (
+                <li>{technology}</li>
+              ))}
+            </TechologiesStyles>
+          </SectionStyles>
+
+          <SectionStyles className="testing">
+            <h1>Testing</h1>
+            <p>
+              This app was tested for Performance, SEO. Accessibility and Best
+              practices
+            </p>
+            <p>This is the result</p>
+            <Image src={project.testResult} />
+          </SectionStyles>
+        </ProjectStyles>
+      )}
     </>
   );
 };
