@@ -136,6 +136,9 @@ const GlobalStyles = createGlobalStyle`
     ${respondTo.laptop`
       width: 65vw;
     `}
+    ${respondTo.tabletMini`
+      width: 80vw;
+    `}
     overflow: scroll;
     height: min-content;
     margin: 0 auto;

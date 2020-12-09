@@ -1,3 +1,4 @@
+import { Link } from "gatsby";
 import React from "react";
 import styled from "styled-components";
 import Image from "../Image";
@@ -30,7 +31,7 @@ const PortfolioItemStyles = styled.li`
     .gatsby-image-wrapper {
       display: none;
     }
-    button {
+    a {
       opacity: 1;
     }
     .technologies {
@@ -50,7 +51,7 @@ const PortfolioItemStyles = styled.li`
     padding: 0 2rem;
     z-index: 2;
   }
-  button {
+  a {
     opacity: 0;
     background: transparent;
     border: 1px solid var(--secondary);
@@ -59,6 +60,7 @@ const PortfolioItemStyles = styled.li`
 
     padding: 1rem 2rem;
     font-size: 1.6rem;
+    text-transform: uppercase;
     align-self: center;
     margin-top: 3rem;
     z-index: 5;
@@ -69,40 +71,41 @@ const PortfolioItemStyles = styled.li`
       color: var(--white);
     }
   }
+`;
 
-  .technologies {
-    opacity: 0;
-    display: flex;
-    flex-wrap: wrap;
+export const TechologiesStyles = styled.ul`
+  opacity: 0;
+  display: flex;
+  flex-wrap: wrap;
 
-    align-self: center;
-    align-items: center;
-    justify-content: center;
-    padding: 0 2rem;
-    margin-top: 2rem;
-    li {
-      background: var(--black);
-      padding: 0.5rem 1rem;
-      font-size: 1.6rem;
-      text-transform: uppercase;
-      margin: 0.5rem;
-    }
+  align-self: center;
+  align-items: center;
+  justify-content: center;
+  padding: 0 2rem;
+  margin-top: 2rem;
+  li {
+    background: var(--black);
+    padding: 0.5rem 1rem;
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    margin: 0.5rem;
   }
 `;
 
 const PortfolioItem = ({ data }) => {
-  console.log(data);
   return (
     <PortfolioItemStyles>
       <h2>{data.title}</h2>
       <Image src={data.image.src} alt={data.image.alt} />
-      <ul className="technologies">
+      <TechologiesStyles className="technologies">
         {data.technologies.map((technology) => (
           <li>{technology}</li>
         ))}
-      </ul>
+      </TechologiesStyles>
 
-      <button onClick={() => console.log("herlo")}>See project</button>
+      <Link to={`/project/${data.title.toLowerCase().split(" ").join("-")}`}>
+        SEE project
+      </Link>
     </PortfolioItemStyles>
   );
 };

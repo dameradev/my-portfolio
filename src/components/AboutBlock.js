@@ -1,6 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 
+import frontendIcon from "../assets/images/frontend-icon.svg";
+import backendIcon from "../assets/images/backend-icon.svg";
+
 import respondTo from "../utils/respondTo";
 
 const AboutBlockStyles = styled.div`
@@ -90,7 +93,10 @@ const AboutBlockStyles = styled.div`
 const AboutBlock = ({ data }) => {
   return (
     <AboutBlockStyles>
-      <img src={data.icon} alt="frontend-icon" />
+      <img
+        src={data.icon === "frontendIcon" ? frontendIcon : backendIcon}
+        alt="frontend-icon"
+      />
       <h2>{data.title}</h2>
       <p>{data.description}</p>
       <div className="technologies">

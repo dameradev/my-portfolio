@@ -8,6 +8,7 @@ const NavStyles = styled.nav`
   background: var(--primary);
   position: fixed;
   z-index: 100;
+  top: 0;
 
   display: flex;
   align-items: center;

@@ -45,10 +45,10 @@ const HomePage = () => {
       <SectionStyles id="portfolio" className="portfolio">
         <h1>My work</h1>
         <ul className="portfolio__list">
-          <PortfolioItem data={portfolioData.roarBikes} />
-          <PortfolioItem data={portfolioData.pep} />
-          <PortfolioItem data={portfolioData.queens} />
-          <PortfolioItem data={portfolioData.aladinko} />
+          <PortfolioItem data={portfolioData[1]} />
+          <PortfolioItem data={portfolioData[2]} />
+          <PortfolioItem data={portfolioData[3]} />
+          <PortfolioItem data={portfolioData[4]} />
         </ul>
       </SectionStyles>
 
