@@ -127,6 +127,7 @@ export const data = {
         `In this way, I made sure the client has to pay the minimal amount
       (only hosting), and get slick looking fast and SEO friendly website`,
       ],
+      testResult: "testing-aladinko.png",
     },
   },
 };
