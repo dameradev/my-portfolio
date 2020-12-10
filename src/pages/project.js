@@ -102,13 +102,13 @@ const Project = (props) => {
   const project = data.portfolio[id];
 
   return (
-    project && (
-      <>
-        <SEO
-          title={project.title}
-          description={project.description}
-          image={project.slideshow[0].src}
-        />
+    <>
+      <SEO
+        title={project.title}
+        description={project.description}
+        image={project.slideshow[0].src}
+      />
+      {project && (
         <ProjectStyles>
           <div className="header">
             <h1>{project.title}</h1>
@@ -151,8 +151,8 @@ const Project = (props) => {
             <Image src={project.testResult} />
           </SectionStyles>
         </ProjectStyles>
-      </>
-    )
+      )}
+    </>
   );
 };
 
