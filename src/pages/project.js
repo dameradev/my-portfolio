@@ -104,9 +104,9 @@ const Project = (props) => {
   return (
     <>
       <SEO
-        title={project.title}
-        description={project.description}
-        image={project.slideshow[0].src}
+        title={project?.title}
+        description={project?.description}
+        image={project?.slideshow[0].src}
       />
       {project && (
         <ProjectStyles>
