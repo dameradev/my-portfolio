@@ -9,6 +9,7 @@ import Image from "../components/Image";
 import { SectionStyles } from "../styles/HomePage";
 import { TechologiesStyles } from "../components/Portfolio/Item";
 import respondTo from "../utils/respondTo";
+import SEO from "../components/SEO";
 
 const ProjectStyles = styled.div`
   margin-top: 10rem;
@@ -101,8 +102,13 @@ const Project = (props) => {
   const project = data.portfolio[id];
 
   return (
-    <>
-      {project && (
+    project && (
+      <>
+        <SEO
+          title={project.title}
+          description={project.description}
+          image={project.slideshow[0].src}
+        />
         <ProjectStyles>
           <div className="header">
             <h1>{project.title}</h1>
@@ -145,8 +151,8 @@ const Project = (props) => {
             <Image src={project.testResult} />
           </SectionStyles>
         </ProjectStyles>
-      )}
-    </>
+      </>
+    )
   );
 };
 

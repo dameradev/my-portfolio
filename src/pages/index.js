@@ -17,7 +17,7 @@ const HomePage = () => {
 
   return (
     <>
-      <SEO />
+      <SEO title="Main page" />
 
       <HeroStyles>
         <div className="text">
