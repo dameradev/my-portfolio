@@ -41,13 +41,7 @@ export const data = {
       image: { src: "roar-bikes.png", alt: "" },
       technologies: ["Gatsby JS", "React JS", "CSS-in-JS", "Shopify-CMS"],
       slideshow: [{ src: "slideshow-roarbikes.png", alt: "homepage" }],
-      description: [
-        ` This project includes only a landing page, for a carpet cleaning
-      company based in Maribor, Slovenia. It's build using only GatsbyJS,
-      no backend was used.`,
-        `In this way, I made sure the client has to pay the minimal amount
-      (only hosting), and get slick looking fast and SEO friendly website`,
-      ],
+      description: [`This Project is still in development`],
     },
 
     [2]: {
@@ -98,13 +92,7 @@ export const data = {
         "Node JS",
       ],
       slideshow: [{ src: "slideshow-queens.png", alt: "homepage" }],
-      description: [
-        ` This project includes only a landing page, for a carpet cleaning
-      company based in Maribor, Slovenia. It's build using only GatsbyJS,
-      no backend was used.`,
-        `In this way, I made sure the client has to pay the minimal amount
-      (only hosting), and get slick looking fast and SEO friendly website`,
-      ],
+      description: [`This Project is still in development`],
     },
     [4]: {
       title: "Aladinko",
