@@ -1,3 +1,4 @@
+import path from "path";
 import { portfolio } from "./src/utils/data";
 async function turnProjectsIntoPages({ graphql, actions }) {
   // 1. Get a template for this page
