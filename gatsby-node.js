@@ -1,6 +1,6 @@
+const path = require("path");
+const { portfolio } = require("./src/utils/data");
 async function turnProjectsIntoPages({ graphql, actions }) {
-  const path = require("path");
-  import { portfolio } from "./src/utils/data";
   // 1. Get a template for this page
   const projectTemplate = path.resolve("./src/pages/project.js");
 
