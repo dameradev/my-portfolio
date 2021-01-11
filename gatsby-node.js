@@ -17,7 +17,7 @@ async function turnProjectsIntoPages({ graphql, actions }) {
     });
   });
 }
-export async function createPages(params) {
+async function createPages(params) {
   // Create pages dynamically
   // Wait for all promises to be resolved before finishing this function
   await Promise.all([turnProjectsIntoPages(params)]);
