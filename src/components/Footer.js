@@ -81,7 +81,7 @@ export default function Footer() {
         <a href="https://www.linkedin.com/in/damjan-radev-628120145/">
           <img src={LinkedIn} className="linkedin" /> LinkedIn
         </a>
-        <a href="https://www.linkedin.com/in/damjan-radev-628120145/">
+        <a href="https://twitter.com/dameradev">
           <img src={Twitter} /> @dameradev
         </a>
       </div>
