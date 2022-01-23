@@ -13,7 +13,6 @@ function SlideShow({ slideshowData, className }) {
   const handlePrevious = () =>
     index === 0 ? setIndex(length) : setIndex(index - 1);
 
-  console.log(index);
   return (
     <div className={className}>
       <Image src={slideshowData[index]?.src} alt={slideshowData[index]?.alt} />

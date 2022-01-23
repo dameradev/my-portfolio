@@ -54,33 +54,84 @@ const HomePage = () => {
 
       <SectionStyles className="testamonials">
         <h1>Testamonials</h1>
-        <div className="testamonial">
-          <div className="image-wrapper">
-            <Image src="testamonial-avatar.png" className="img" />
-            <p>Josh S</p>
-          </div>
-          <p className="testamonial__content">
-            We are VERY happy with the work Damjan has completed! He has worked
-            for us for the last year on a very big project. We have given him
-            100s of difficult tasks and they were all completely successfully.
-            Damjan will take the time to research and find the best route to
-            complete a task. He is very smart, reliable and always available. He
-            will always remain in our hearts. Thank you Damjan for everything!
-            <Link
-              to="/image"
-              asModal
-              state={{ modal: true, image: "upwork-testamonial" }}
-            >
-              View Source
-            </Link>
-            {/* <a
+        <ul>
+          <li className="testamonial">
+            <div className="image-wrapper">
+              <Image src="testamonial-avatar.png" className="img" />
+              <p>Josh S</p>
+            </div>
+            <p className="testamonial__content">
+              We are VERY happy with the work Damjan has completed! He has
+              worked for us for the last year on a very big project. We have
+              given him 100s of difficult tasks and they were all completely
+              successfully. Damjan will take the time to research and find the
+              best route to complete a task. He is very smart, reliable and
+              always available. He will always remain in our hearts. Thank you
+              Damjan for everything!
+              <Link
+                to="/image"
+                asModal
+                state={{ modal: true, image: "upwork-testamonial" }}
+              >
+                View Source
+              </Link>
+              {/* <a
               href="https://www.upwork.com/freelancers/~016698a4e83f22f634"
               target="_blank"
             >
               View Source
             </a> */}
-          </p>
-        </div>
+            </p>
+          </li>
+          <li className="testamonial">
+            <div className="image-wrapper">
+              <Image src="girl-avatar.png" className="img" />
+              <p>Bre V</p>
+            </div>
+            <p className="testamonial__content">
+              Damjan was great! Great work and a quick turnaround. Will
+              absolutely work with him again in the future!
+              <Link
+                to="/image"
+                asModal
+                state={{ modal: true, image: "testamonial-try-frame" }}
+              >
+                View Source
+              </Link>
+              {/* <a
+              href="https://www.upwork.com/freelancers/~016698a4e83f22f634"
+              target="_blank"
+            >
+              View Source
+            </a> */}
+            </p>
+          </li>
+          <li className="testamonial">
+            <div className="image-wrapper">
+              <Image src="testamonial-avatar.png" className="img" />
+              <p>Hugo R</p>
+            </div>
+            <p className="testamonial__content">
+              Damjan is a professional software developer; we have been working
+              together for almost a year and he constantly delivers the project
+              and features. He is able to produce quality, and tested coded and
+              work independently. I would recommend anyone working with him
+              <Link
+                to="/image"
+                asModal
+                state={{ modal: true, image: "testamonial-ndw" }}
+              >
+                View Source
+              </Link>
+              {/* <a
+              href="https://www.upwork.com/freelancers/~016698a4e83f22f634"
+              target="_blank"
+            >
+              View Source
+            </a> */}
+            </p>
+          </li>
+        </ul>
       </SectionStyles>
       <SectionStyles className="certificates">
         <h1>Certificates</h1>

@@ -176,6 +176,13 @@ export const SectionStyles = styled.section`
       border-bottom: 1rem solid var(--primary);
       padding: 10rem 10%;
 
+      &:nth-of-type(2) {
+        flex-direction: row-reverse;
+      }
+      &:last-of-type {
+        border-bottom: none;
+      }
+
       ${respondTo.tabletMini`
         flex-direction:column;
         gap: 0;

@@ -134,14 +134,18 @@ const Project = (props) => {
           <div className="header">
             <h1>{project.title}</h1>
             <div className="links">
-              <a href={project.website} target="_blank">
-                <img src={ViewWebsiteIcon} />
-                View website
-              </a>
-              <a href={project.github} target="_blank">
-                <img src={GithubIcon} />
-                Open in github
-              </a>
+              {project.website && (
+                <a href={project.website} target="_blank">
+                  <img src={ViewWebsiteIcon} />
+                  View website
+                </a>
+              )}
+              {project.github && (
+                <a href={project.github} target="_blank">
+                  <img src={GithubIcon} />
+                  Open in github
+                </a>
+              )}
             </div>
           </div>
 

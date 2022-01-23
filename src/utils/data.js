@@ -14,6 +14,7 @@ export const data = {
         items: [
           "React JS (React Hooks)",
           "Material Ui",
+          "Tailwind css",
           "Next JS",
           "Gatsby JS",
           "Graphql",
@@ -31,7 +32,7 @@ export const data = {
       },
       devTools: {
         title: "CMS",
-        items: ["Shopify", "Sanity", "Strapi", "Keystone"],
+        items: ["Shopify", "Sanity", "Strapi", "Keystone", "Prismic"],
       },
     },
   },
