@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 import LinkedIn from "../assets/images/linkedin-icon.svg";
 import Twitter from "../assets/images/twitter.svg";
+import respondTo from "../utils/respondTo";
 
 const FooterStyles = styled.footer`
   padding: 0 5%;
@@ -14,8 +15,17 @@ const FooterStyles = styled.footer`
   background: var(--primary);
   color: var(--white);
   clip-path: polygon(0 0, 100% 10vh, 100% 100%, 0 85vh);
+
+  ${respondTo.tablet`
+    height: 50rem;
+    flex-direction: column;
+  `}
   address {
     font-style: normal;
+
+    ${respondTo.tablet`
+    margin-top:10rem;
+  `}
     p:last-of-type {
       margin-bottom: 0.5rem;
     }

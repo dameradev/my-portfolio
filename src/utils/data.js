@@ -37,11 +37,34 @@ export const data = {
   },
   portfolio: {
     [1]: {
-      title: "Roar bikes",
-      image: { src: "roar-bikes.png", alt: "" },
-      technologies: ["Gatsby JS", "React JS", "CSS-in-JS", "Shopify-CMS"],
-      slideshow: [{ src: "slideshow-roarbikes.png", alt: "homepage" }],
-      description: [`This Project is still in development`],
+      title: "Non-stop dogwear",
+      image: { src: "ndw-1.png", alt: "" },
+      technologies: [
+        "Next JS",
+        "React JS",
+        "Graphql",
+        "Prisma-DB",
+        "Node JS",
+        "Tailwind css",
+        "Apollo",
+      ],
+      slideshow: [
+        { src: "ndw-1.png", alt: "b2b customer page" },
+        { src: "ndw-b2b.png", alt: "b2b customer page" },
+        { src: "ndw-dashboard.png", alt: "b2b customer page" },
+      ],
+      description: [
+        `Client had hundreds of companies that make weekly orders from them.
+         They are a major dog gear vendor based in Norway. My job was to create a platform which 
+         will make an easy to use interface for their customers (businesses) to make orders`,
+        `They also needed a dashboard with which they could manage information about their customers more easily.`,
+        `Big and difficult part of this project was connecting
+         the database (data received from customers) to their already functioning ERP system.`,
+        `The platform cannot be opened by a non customer so a demo is not available, nor is the codebase.`,
+      ],
+
+      testMessage: "Testamonial from client",
+      testResult: "testamonial-ndw.png",
     },
 
     [2]: {
@@ -81,18 +104,20 @@ export const data = {
       testResult: "testing-pep.png",
     },
     [3]: {
-      title: "Queen's gambit",
-      image: { src: "queens.png", alt: "" },
+      title: "Try frame page redesign",
+      image: { src: "try-frame.png", alt: "" },
       website: "#",
-      technologies: [
-        "Gatsby JS",
-        "React JS",
-        "CSS-in-JS",
-        "Keystone 5 CMS",
-        "Node JS",
+      technologies: ["Next JS", "React JS", "SCSS", "Material UI"],
+      slideshow: [
+        { src: "try-frame.png", alt: "Therapists page" },
+        { src: "try-frame1.png", alt: "Therapists page" },
+        { src: "try-frame2.png", alt: "Therapists page" },
       ],
-      slideshow: [{ src: "slideshow-queens.png", alt: "homepage" }],
-      description: [`This Project is still in development`],
+      description: [
+        `This was a one time project for page redesign, and develop. I've worked on it for approx 30hrs.`,
+      ],
+      testMessage: "Testamonial from client",
+      testResult: "testamonial-try-frame.png",
     },
     [4]: {
       title: "Aladinko",
@@ -123,8 +148,8 @@ export const data = {
 export const portfolio = [
   {
     id: 1,
-    title: "Roar bikes",
-    image: { src: "roar-bikes.png", alt: "" },
+    title: "Non stop dogwear",
+    image: { src: "ndw-1.png", alt: "" },
     technologies: ["Gatsby JS", "React JS", "CSS-in-JS", "Shopify-CMS"],
   },
 
@@ -145,15 +170,9 @@ export const portfolio = [
   },
   {
     id: 3,
-    title: "Queen's gambit",
-    image: { src: "queens.png", alt: "" },
-    technologies: [
-      "Gatsby JS",
-      "React JS",
-      "CSS-in-JS",
-      "Keystone 5 CMS",
-      "Node JS",
-    ],
+    title: "Try frame page redesign",
+    image: { src: "try-frame.png", alt: "Therapists page redesign" },
+    technologies: ["Next JS", "React JS", "SCSS", "Material UI"],
   },
   {
     id: 4,

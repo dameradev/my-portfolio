@@ -14,6 +14,8 @@ import SEO from "../components/SEO";
 const ProjectStyles = styled.div`
   margin-top: 10rem;
   padding: 2rem 5%;
+  display: flex;
+  flex-direction: column;
   .header {
     display: flex;
     justify-content: space-between;
@@ -55,9 +57,18 @@ const ProjectStyles = styled.div`
     }
   }
   .slideshow {
-    max-width: 80rem;
-    max-height: 60rem;
+    width: 80rem;
+    height: 60rem;
     margin: 2rem auto;
+
+    /* ${respondTo.laptopSmall`
+    max-width: 50rem;
+  `}; */
+    ${respondTo.tablet`
+      width: 100%;
+      height: 30rem;
+      margin: 0;
+      `}
 
     .gatsby-image-wrapper {
       width: 100%;
@@ -78,6 +89,16 @@ const ProjectStyles = styled.div`
     color: #fff;
   }
   .description {
+    margin-top: 20rem;
+    text-aling: left;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: max-content;
+    h1 {
+      align-self: center;
+    }
     p {
       text-align: left;
       font-weight: 200;
@@ -142,12 +163,18 @@ const Project = (props) => {
           </SectionStyles>
 
           <SectionStyles className="testing">
-            <h1>Testing</h1>
-            <p>
-              This app was tested for Performance, SEO. Accessibility and Best
-              practices
-            </p>
-            <p>This is the result</p>
+            {!project.testMessage ? (
+              <>
+                <h1>Testing</h1>
+                <p>
+                  This app was tested for Performance, SEO. Accessibility and
+                  Best practices
+                </p>
+                <p>This is the result</p>
+              </>
+            ) : (
+              <h1>{project.testMessage}</h1>
+            )}
             <Image src={project.testResult} />
           </SectionStyles>
         </ProjectStyles>

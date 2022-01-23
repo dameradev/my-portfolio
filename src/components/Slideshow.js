@@ -16,7 +16,7 @@ function SlideShow({ slideshowData, className }) {
   console.log(index);
   return (
     <div className={className}>
-      <Image src={slideshowData[index].src} alt={slideshowData[index].alt} />
+      <Image src={slideshowData[index]?.src} alt={slideshowData[index]?.alt} />
 
       <div className="buttons">
         <button onClick={() => handlePrevious()}>Previous</button>
