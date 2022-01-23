@@ -89,6 +89,7 @@ const ProjectStyles = styled.div`
     color: #fff;
   }
   .description {
+    max-width: 100%;
     margin-top: 20rem;
     text-aling: left;
     align-self: center;

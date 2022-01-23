@@ -107,7 +107,7 @@ export const data = {
     [3]: {
       title: "Try frame page redesign",
       image: { src: "try-frame.png", alt: "" },
-      website: "#",
+      website: "https://www.tryframe.com/therapists",
       technologies: ["Next JS", "React JS", "SCSS", "Material UI"],
       slideshow: [
         { src: "try-frame.png", alt: "Therapists page" },
