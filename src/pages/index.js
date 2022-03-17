@@ -136,11 +136,7 @@ const HomePage = () => {
       <SectionStyles className="certificates">
         <h1>Certificates</h1>
         <ul>
-          <li>
-            <Link to="/image" asModal state={{ modal: true, image: "css" }}>
-              Css-The Complete Guide(Flexbox, grid&Sass)
-            </Link>
-          </li>
+          <li>Css-The Complete Guide(Flexbox, grid&Sass)</li>
           <li>
             <Link to="/image" asModal state={{ modal: true, image: "node-js" }}>
               NodeJs-The Complete Guide(incl. MVC, REST APIs, GraphQL)

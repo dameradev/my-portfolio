@@ -99,7 +99,7 @@ const PortfolioItem = ({ data }) => {
       <Image src={data.image.src} alt={data.image.alt} />
       <TechologiesStyles className="technologies">
         {data.technologies.map((technology) => (
-          <li>{technology}</li>
+          <li key={technology}> {technology}</li>
         ))}
       </TechologiesStyles>
 

@@ -104,7 +104,7 @@ const AboutBlock = ({ data }) => {
           <h3>{data.languages.title}</h3>
           <ul>
             {data.languages.items.map((item) => (
-              <li>{item}</li>
+              <li key={item}>{item}</li>
             ))}
           </ul>
         </div>
@@ -112,7 +112,7 @@ const AboutBlock = ({ data }) => {
           <h3>{data.devTools.title}</h3>
           <ul>
             {data.devTools.items.map((item) => (
-              <li>{item}</li>
+              <li key={item}>{item}</li>
             ))}
           </ul>
         </div>
