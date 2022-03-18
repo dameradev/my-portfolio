@@ -41,7 +41,7 @@ const HomePage = ({ data }) => {
             websites with custom backend or cms
           </h3>
           <button>
-            <Link to="/#portfolio">SEE my work</Link>
+            <Link to="/#portfolio">SEE MY WORK</Link>
           </button>
         </div>
       </HeroStyles>

@@ -12,6 +12,7 @@ import respondTo from "../utils/respondTo";
 import SEO from "../components/SEO";
 import { graphql } from "gatsby";
 import { MDXRenderer } from "gatsby-plugin-mdx";
+import { Link } from "gatsby";
 
 const ProjectStyles = styled.div`
   margin-top: 10rem;
@@ -120,6 +121,12 @@ const ProjectStyles = styled.div`
       max-width: 100%;
     }
   }
+  .bottom-links {
+    margin-top: 5rem;
+    font-size: 2.4rem;
+    display: flex;
+    justify-content: space-between;
+  }
 `;
 
 const Project = (props) => {
@@ -138,6 +145,7 @@ const Project = (props) => {
     website,
     github,
   } = project.frontmatter;
+  const { previous, next } = props.data;
   console.log(project);
   return (
     <>
@@ -169,6 +177,7 @@ const Project = (props) => {
           {slideshow && (
             <Slideshow className="slideshow" slideshowData={slideshow} />
           )}
+
           <SectionStyles className="description">
             <MDXRenderer className="">{project.body}</MDXRenderer>
             {/* <h1>Description</h1>
@@ -205,6 +214,22 @@ const Project = (props) => {
               </SectionStyles>
             </>
           )}
+          <ul className="bottom-links">
+            <li>
+              {previous && (
+                <Link to={`/${previous.slug}`} rel="prev">
+                  ← {previous.frontmatter.title}
+                </Link>
+              )}
+            </li>
+            <li>
+              {next && (
+                <Link to={`/${next.slug}`} rel="next">
+                  {next.frontmatter.title} →
+                </Link>
+              )}
+            </li>
+          </ul>
         </ProjectStyles>
       )}
     </>
@@ -213,8 +238,24 @@ const Project = (props) => {
 
 export const pageQuery = graphql`
   query ProjectBySlug(
-    $id: String # $previousPostId: String # $nextPostId: String
+    $id: String
+    $previousPostId: String
+    $nextPostId: String
   ) {
+    previous: mdx(id: { eq: $previousPostId }) {
+      slug
+
+      frontmatter {
+        title
+      }
+    }
+    next: mdx(id: { eq: $nextPostId }) {
+      slug
+
+      frontmatter {
+        title
+      }
+    }
     mdx(id: { eq: $id }) {
       id
       body
