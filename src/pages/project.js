@@ -10,6 +10,8 @@ import { SectionStyles } from "../styles/HomePage";
 import { TechologiesStyles } from "../components/Portfolio/Item";
 import respondTo from "../utils/respondTo";
 import SEO from "../components/SEO";
+import { graphql } from "gatsby";
+import { MDXRenderer } from "gatsby-plugin-mdx";
 
 const ProjectStyles = styled.div`
   margin-top: 10rem;
@@ -27,6 +29,7 @@ const ProjectStyles = styled.div`
     }
     .links {
       display: flex;
+      height: max-content;
       ${respondTo.mobileSmall`
         flex-direction: column;
       `}
@@ -90,7 +93,7 @@ const ProjectStyles = styled.div`
   }
   .description {
     max-width: 100%;
-    margin-top: 20rem;
+    margin-top: 12rem;
     text-aling: left;
     align-self: center;
     display: flex;
@@ -120,29 +123,42 @@ const ProjectStyles = styled.div`
 `;
 
 const Project = (props) => {
-  const id = props.pageContext.id;
-  const project = data.portfolio[id];
+  console.log(data);
+  // const id = props.pageContext.id;
+  // const project = data.portfolio[id];
 
+  const project = props.data.mdx;
+  const {
+    title,
+    image,
+    technologies,
+    slideshow,
+    testMessage,
+    testResult,
+    website,
+    github,
+  } = project.frontmatter;
+  console.log(project);
   return (
     <>
       <SEO
-        title={project?.title}
-        description={project?.description}
-        image={project?.slideshow[0].src}
+        title={title}
+        // description={description}
+        image={image}
       />
       {project && (
         <ProjectStyles>
           <div className="header">
-            <h1>{project.title}</h1>
+            <h1>{title}</h1>
             <div className="links">
-              {project.website && (
-                <a href={project.website} target="_blank">
+              {website && (
+                <a href={website} target="_blank">
                   <img src={ViewWebsiteIcon} />
                   View website
                 </a>
               )}
-              {project.github && (
-                <a href={project.github} target="_blank">
+              {github && (
+                <a href={github} target="_blank">
                   <img src={GithubIcon} />
                   Open in github
                 </a>
@@ -150,42 +166,73 @@ const Project = (props) => {
             </div>
           </div>
 
-          <Slideshow className="slideshow" slideshowData={project.slideshow} />
+          {slideshow && (
+            <Slideshow className="slideshow" slideshowData={slideshow} />
+          )}
           <SectionStyles className="description">
-            <h1>Description</h1>
-            {project.description.map((item) => (
+            <MDXRenderer className="">{project.body}</MDXRenderer>
+            {/* <h1>Description</h1>
+            {description.map((item) => (
               <p>{item}</p>
-            ))}
+            ))} */}
           </SectionStyles>
           <SectionStyles>
             <h1>Technologies</h1>
 
             <TechologiesStyles className="technologies">
-              {project.technologies.map((technology) => (
+              {technologies.map((technology) => (
                 <li>{technology}</li>
               ))}
             </TechologiesStyles>
           </SectionStyles>
 
-          <SectionStyles className="testing">
-            {!project.testMessage ? (
-              <>
-                <h1>Testing</h1>
-                <p>
-                  This app was tested for Performance, SEO. Accessibility and
-                  Best practices
-                </p>
-                <p>This is the result</p>
-              </>
-            ) : (
-              <h1>{project.testMessage}</h1>
-            )}
-            <Image src={project.testResult} />
-          </SectionStyles>
+          {testResult && (
+            <>
+              <SectionStyles className="testing">
+                {!testMessage && testResult ? (
+                  <>
+                    <h1>Testing</h1>
+                    <p>
+                      This app was tested for Performance, SEO. Accessibility
+                      and Best practices
+                    </p>
+                    <p>This is the result</p>
+                  </>
+                ) : (
+                  <h1>{testMessage}</h1>
+                )}
+                <Image src={testResult} />
+              </SectionStyles>
+            </>
+          )}
         </ProjectStyles>
       )}
     </>
   );
 };
+
+export const pageQuery = graphql`
+  query ProjectBySlug(
+    $id: String # $previousPostId: String # $nextPostId: String
+  ) {
+    mdx(id: { eq: $id }) {
+      id
+      body
+      frontmatter {
+        title
+        technologies
+        image
+        testMessage
+        testResult
+        website
+        github
+        slideshow {
+          image
+          image_alt
+        }
+      }
+    }
+  }
+`;
 
 export default Project;

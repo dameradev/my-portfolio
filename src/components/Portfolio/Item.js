@@ -93,19 +93,19 @@ export const TechologiesStyles = styled.ul`
 `;
 
 const PortfolioItem = ({ data }) => {
+  const { title, technologies, image } = data.frontmatter;
   return (
     <PortfolioItemStyles>
-      <h2>{data.title}</h2>
-      <Image src={data.image.src} alt={data.image.alt} />
+      <h2>{title}</h2>
+      {/* <></> */}
+      <Image src={image} />
       <TechologiesStyles className="technologies">
-        {data.technologies.map((technology) => (
+        {technologies.map((technology) => (
           <li key={technology}> {technology}</li>
         ))}
       </TechologiesStyles>
 
-      <Link to={`/project/${data.title.toLowerCase().split(" ").join("-")}`}>
-        SEE project
-      </Link>
+      <Link to={data.slug}>SEE project</Link>
     </PortfolioItemStyles>
   );
 };

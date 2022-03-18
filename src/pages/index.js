@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 
 import { Link } from "gatsby-plugin-modal-routing";
 
@@ -6,14 +6,29 @@ import AboutBlock from "../components/AboutBlock";
 import PortfolioItem from "../components/Portfolio/Item";
 import SEO from "../components/SEO";
 import Image from "../components/Image";
-
+import SkyLight from "react-skylight";
 import { HeroStyles, SectionStyles } from "../styles/HomePage";
-import { data } from "../utils/data";
+import { data as recivedData } from "../utils/data";
+import { graphql } from "gatsby";
 
-const HomePage = () => {
-  const frontendData = data.about.frontend;
-  const backendData = data.about.backend;
-  const portfolioData = data.portfolio;
+const HomePage = ({ data }) => {
+  const frontendData = recivedData.about.frontend;
+  const backendData = recivedData.about.backend;
+  const portfolioData = recivedData.portfolio;
+
+  console.log(data);
+
+  const firstTestimonial = useRef();
+  const secondTestimonial = useRef();
+  const fifthTestimonial = useRef();
+
+  const firstCert = useRef();
+  const secondCert = useRef();
+  const thirdCert = useRef();
+  const forthCert = useRef();
+  const fifthCert = useRef();
+
+  const projects = data.allMdx.edges;
 
   return (
     <>
@@ -45,10 +60,9 @@ const HomePage = () => {
       <SectionStyles id="portfolio" className="portfolio">
         <h1>My work</h1>
         <ul className="portfolio__list">
-          <PortfolioItem data={portfolioData[4]} />
-          <PortfolioItem data={portfolioData[2]} />
-          <PortfolioItem data={portfolioData[1]} />
-          <PortfolioItem data={portfolioData[3]} />
+          {projects.map(({ node }) => (
+            <PortfolioItem data={node} />
+          ))}
         </ul>
       </SectionStyles>
 
@@ -68,13 +82,15 @@ const HomePage = () => {
               best route to complete a task. He is very smart, reliable and
               always available. He will always remain in our hearts. Thank you
               Damjan for everything!
-              <Link
-                to="/image"
-                asModal
-                state={{ modal: true, image: "upwork-testamonial" }}
+              <SkyLight hideOnOverlayClicked ref={firstTestimonial}>
+                <Image src="upwork-testamonial.png" />
+              </SkyLight>
+              <a
+                className="clickable"
+                onClick={() => firstTestimonial.current.show()}
               >
                 View Source
-              </Link>
+              </a>
               {/* <a
               href="https://www.upwork.com/freelancers/~016698a4e83f22f634"
               target="_blank"
@@ -91,13 +107,15 @@ const HomePage = () => {
             <p className="testamonial__content">
               Damjan was great! Great work and a quick turnaround. Will
               absolutely work with him again in the future!
-              <Link
-                to="/image"
-                asModal
-                state={{ modal: true, image: "testamonial-try-frame" }}
+              <SkyLight hideOnOverlayClicked ref={secondTestimonial}>
+                <Image src="testamonial-try-frame.png" />
+              </SkyLight>
+              <a
+                className="clickable"
+                onClick={() => secondTestimonial.current.show()}
               >
                 View Source
-              </Link>
+              </a>
               {/* <a
               href="https://www.upwork.com/freelancers/~016698a4e83f22f634"
               target="_blank"
@@ -116,13 +134,15 @@ const HomePage = () => {
               together for almost a year and he constantly delivers the project
               and features. He is able to produce quality, and tested coded and
               work independently. I would recommend anyone working with him
-              <Link
-                to="/image"
-                asModal
-                state={{ modal: true, image: "testamonial-ndw" }}
+              <SkyLight hideOnOverlayClicked ref={fifthTestimonial}>
+                <Image src="testamonial-ndw.png" />
+              </SkyLight>
+              <a
+                className="clickable"
+                onClick={() => fifthTestimonial.current.show()}
               >
                 View Source
-              </Link>
+              </a>
               {/* <a
               href="https://www.upwork.com/freelancers/~016698a4e83f22f634"
               target="_blank"
@@ -133,42 +153,73 @@ const HomePage = () => {
           </li>
         </ul>
       </SectionStyles>
+
       <SectionStyles className="certificates">
         <h1>Certificates</h1>
         <ul>
-          <li>Css-The Complete Guide(Flexbox, grid&Sass)</li>
           <li>
-            <Link to="/image" asModal state={{ modal: true, image: "node-js" }}>
+            <SkyLight hideOnOverlayClicked ref={firstCert}>
+              <Image src="css.png" />
+            </SkyLight>
+            <p onClick={() => firstCert.current.show()}>
+              Css-The Complete Guide(Flexbox, grid&Sass)
+            </p>
+          </li>
+          <li>
+            <SkyLight hideOnOverlayClicked ref={secondCert}>
+              <Image src="node-js.png" />
+            </SkyLight>
+            <p onClick={() => secondCert.current.show()}>
               NodeJs-The Complete Guide(incl. MVC, REST APIs, GraphQL)
-            </Link>
+            </p>
           </li>
           <li>
-            <Link
-              to="/image"
-              asModal
-              state={{ modal: true, image: "master-gatsby" }}
-            >
+            <SkyLight hideOnOverlayClicked ref={thirdCert}>
+              <Image src="master-gatsby.png" />
+            </SkyLight>
+
+            <p onClick={() => thirdCert.current.show()}>
               Master Gatsby Advanced Course
-            </Link>
+            </p>
           </li>
           <li>
-            <Link
-              to="/image"
-              asModal
-              state={{ modal: true, image: "advanced-react" }}
-            >
+            <SkyLight hideOnOverlayClicked ref={forthCert}>
+              <Image src="advanced-react.png" />
+            </SkyLight>
+            <p onClick={() => forthCert.current.show()}>
               Advanced React and GraphQL and Prisma
-            </Link>
+            </p>
           </li>
           <li>
-            <Link to="/image" asModal state={{ modal: true, image: "react" }}>
+            <SkyLight hideOnOverlayClicked ref={fifthCert}>
+              <Image src="react.png" />
+            </SkyLight>
+            <p onClick={() => fifthCert.current.show()}>
               Modern React and Redux
-            </Link>
+            </p>
           </li>
         </ul>
       </SectionStyles>
     </>
   );
 };
+
+export const pageQuery = graphql`
+  query {
+    allMdx {
+      edges {
+        node {
+          slug
+          frontmatter {
+            title
+            image
+
+            technologies
+          }
+        }
+      }
+    }
+  }
+`;
 
 export default HomePage;

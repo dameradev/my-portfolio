@@ -118,6 +118,19 @@ const GlobalStyles = createGlobalStyle`
 
   }
 
+  .skylight-dialog {
+    top:35% !important;
+    ${respondTo.tabletMini`
+     width: 100vw !important;
+      height: max-content !important;
+      /* top: 50% !important; */
+      left: 25% !important;
+    `}; 
+  }
+
+  .clickable {
+    cursor: pointer;
+  }
   .ReactModal__Overlay--after-open {
     opacity: 1;
   
